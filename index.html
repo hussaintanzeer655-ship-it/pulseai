@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pulse AI — The Web's Trending Hub</title>
+<style>
+:root{--bg:#02030f;--card:rgba(14,16,48,.62);--tx:#f2f2fa;--mu:#a3a8cc;--a:#7c5cff;--b:#00d4ff;--p:#ff4d9d;--bd:rgba(120,130,220,.22);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:radial-gradient(ellipse at 20% 8%,#1b1055 0,transparent 50%),radial-gradient(ellipse at 88% 30%,#3a0d4d 0,transparent 45%),radial-gradient(ellipse at 50% 100%,#052a4a 0,transparent 55%),#02030f;background-attachment:fixed;color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;overflow-x:hidden}
+.g{background:linear-gradient(90deg,var(--a),var(--p),var(--b),var(--a));background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 6s linear infinite}
+@keyframes sh{to{background-position:200%}}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--bd)}
+.logo{font-weight:800;font-size:1.25rem;display:flex;align-items:center;gap:8px}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--b);animation:pu 1.8s infinite}
+@keyframes pu{0%{box-shadow:0 0 0 0 rgba(0,212,255,.7)}100%{box-shadow:0 0 0 14px rgba(0,212,255,0)}}
+nav a{color:var(--mu);text-decoration:none;margin-left:22px;font-size:.92rem;transition:color .2s}
+nav a:hover{color:var(--tx)}
+.hero{position:relative;text-align:center;padding:12vh 5vw 8vh;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.45;animation:fl 12s ease-in-out infinite alternate;z-index:0}
+.o1{width:380px;height:380px;background:var(--a);top:-80px;left:-80px}
+.o3{width:300px;height:300px;background:var(--p);top:30%;left:55%;animation-delay:-8s}.o2{width:320px;height:320px;background:var(--b);bottom:-60px;right:-60px;animation-delay:-5s}
+@keyframes fl{to{transform:translate(60px,40px) scale(1.2)}}
+.hero>*{position:relative;z-index:1}
+.tag{display:inline-block;padding:6px 16px;border:1px solid var(--bd);border-radius:99px;font-size:.82rem;color:var(--mu);background:var(--card);margin-bottom:22px}
+h1{font-size:clamp(2.2rem,6.5vw,4.6rem);line-height:1.1;font-weight:800;max-width:900px;margin:0 auto 20px}
+.hero p{color:var(--mu);max-width:600px;margin:0 auto 32px;font-size:1.1rem}
+.btn{display:inline-block;padding:14px 30px;border-radius:12px;font-weight:700;color:#fff;text-decoration:none;background:linear-gradient(135deg,var(--a),var(--b));transition:transform .2s,box-shadow .2s;border:0;cursor:pointer;font-size:1rem}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(124,92,255,.45)}
+.chat{max-width:560px;margin:48px auto 0;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:18px;text-align:left;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.m{padding:10px 14px;border-radius:12px;margin-bottom:10px;max-width:88%;font-size:.95rem;animation:in .5s both}
+.u{background:var(--a);color:#fff;margin-left:auto}
+.ai{background:var(--bd)}
+@keyframes in{from{opacity:0;transform:translateY(10px)}}
+.cur::after{content:"▍";animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.tick{overflow:hidden;border-block:1px solid var(--bd);padding:14px 0;background:var(--card)}
+.tr{display:flex;gap:48px;width:max-content;animation:sc 18s linear infinite}
+.tr span{color:var(--mu);white-space:nowrap}.tr b{color:var(--tx)}.up{color:#2ecc8f}
+@keyframes sc{to{transform:translateX(-50%)}}
+section{padding:9vh 5vw;max-width:1150px;margin:auto}
+h2{font-size:clamp(1.7rem,4vw,2.6rem);text-align:center;margin-bottom:12px}
+.sub{text-align:center;color:var(--mu);margin-bottom:44px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:26px;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-8px);border-color:var(--a)}
+.ic{font-size:2rem;margin-bottom:12px}
+.card p{color:var(--mu);font-size:.95rem}
+.bar{height:10px;background:var(--bd);border-radius:9px;overflow:hidden;margin:8px 0 22px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a),var(--b));border-radius:9px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.rank{max-width:720px;margin:auto}.row{display:flex;justify-content:space-between;font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;text-align:center}
+.stats b{font-size:2.6rem;display:block}.stats span{color:var(--mu)}
+.rv{opacity:0;transform:translateY(40px);transition:all .5s cubic-bezier(.2,.8,.2,1)}.rv.on{opacity:1;transform:none}
+.cta{text-align:center;margin:6vh 5vw;padding:9vh 5vw;border-radius:26px;background:linear-gradient(135deg,rgba(124,92,255,.25),rgba(0,212,255,.2));border:1px solid var(--bd)}
+.cta p{color:var(--mu);margin:12px 0 28px}
+footer{text-align:center;color:var(--mu);padding:30px;font-size:.85rem;border-top:1px solid var(--bd)}
+@media(max-width:600px){nav a{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+.card{cursor:pointer}.more{display:block;margin-top:14px;color:var(--b);font-weight:600}
+.md{position:fixed;inset:0;z-index:20;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.65);backdrop-filter:blur(6px)}
+.md.on{display:flex}.bx{background:var(--card);border:1px solid var(--bd);border-radius:22px;max-width:520px;width:100%;max-height:90vh;overflow:auto;padding:30px;position:relative;animation:in .4s both}
+.x{position:absolute;top:14px;right:18px;background:none;border:0;color:var(--mu);font-size:1.6rem;cursor:pointer}
+.bx h3{font-size:1.5rem;margin:6px 0 10px}.bx p,.bx li{color:var(--mu)}.bx ul{margin:12px 0 18px 20px}
+.pl{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.pl div{border:1px solid var(--bd);border-radius:14px;padding:14px;text-align:center}.pl b{font-size:1.8rem;display:block}
+.in{width:100%;padding:12px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font-size:1rem;margin:8px 0}
+.ok{color:#2ecc8f;font-weight:600}.er{color:#ff6b6b}.sec{margin-top:18px;border-top:1px solid var(--bd);padding-top:16px}
+.btn.w{background:#25d366;width:100%;text-align:center}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.tc{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:24px;transition:transform .3s,border-color .3s,box-shadow .3s}
+.tc:hover{transform:translateY(-6px);border-color:var(--p);box-shadow:0 14px 40px rgba(255,77,157,.18)}
+.th{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.th .ic{font-size:1.6rem;margin:0}.th b{flex:1;min-width:140px}
+.hot{font-size:.75rem;padding:4px 10px;border-radius:99px;background:rgba(255,77,157,.15);color:var(--p);font-weight:700;animation:pu2 2s infinite}
+@keyframes pu2{50%{transform:scale(1.08)}}
+.tc .bar{margin:14px 0}
+.ex{background:var(--bg);border:1px solid var(--bd);border-radius:14px;padding:14px;min-height:130px}
+.bot{display:block;font-size:.78rem;font-weight:700;margin-bottom:6px;color:var(--b)}.ex p{color:var(--mu);font-size:.93rem}
+.bar i{background-size:200%!important;background-image:linear-gradient(90deg,var(--a),var(--p),var(--b),var(--a))!important;animation:sh 3s linear infinite}
+.rank{max-width:820px}.rw{display:grid;grid-template-columns:34px 150px 1fr 80px;align-items:center;gap:12px;margin-bottom:6px;opacity:0;transform:translateX(-40px);transition:all .5s cubic-bezier(.2,.8,.2,1)}
+.rank.on .rw{opacity:1;transform:none}
+.rk{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.85rem;background:var(--bd)}
+.rw:first-child .rk{background:linear-gradient(135deg,var(--p),var(--a));color:#fff;animation:pu2 1.8s infinite}
+.nm{font-weight:700;display:flex;flex-direction:column;line-height:1.2}.nm small{color:var(--mu);font-weight:400;font-size:.75rem}
+.rw .bar{margin:0}.vl{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+@media(max-width:560px){.rw{grid-template-columns:30px 1fr 64px}.rw .bar{grid-column:1/-1;order:5}}
+.sp .wd{display:inline-block;white-space:nowrap}
+.sp .ch{display:inline-block;opacity:0;transform:perspective(600px) translateY(.6em) rotateX(-85deg) scale(.9);transform-origin:50% 100%;filter:blur(10px);margin-right:.24em;transition:opacity .4s ease,transform .55s cubic-bezier(.2,.9,.2,1),filter .4s ease,margin-right .6s cubic-bezier(.2,.9,.2,1);transition-delay:calc(var(--i)*20ms)}
+.sp.go .ch{opacity:1;transform:none;filter:none;margin-right:0}
+.sp .ch.wo{margin-right:0;transform:translateY(.45em);filter:blur(7px);transition-delay:calc(var(--i)*16ms)}
+.sp.go .ch.wo{transform:none;filter:none}
+.hero p.sp .ch{transition-delay:calc(var(--i)*16ms + .5s)}
+.g.sg{background:none;animation:none;color:inherit}
+.gl{background:linear-gradient(90deg,var(--a),var(--p),var(--b),var(--a));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 5s linear infinite;animation-delay:calc(var(--i)*-.25s)}
+@media(prefers-reduced-motion:reduce){.sp .ch{opacity:1!important;transform:none!important;filter:none!important;margin-right:0!important}}
+.bn{position:relative;max-width:1000px;margin:0 auto 40px;padding:44px 24px 36px;border:1px solid var(--bd);border-radius:26px;background:linear-gradient(135deg,rgba(124,92,255,.22),rgba(255,77,157,.12),rgba(0,212,255,.18));backdrop-filter:blur(8px);overflow:hidden}
+.sl{position:absolute;font-family:"Segoe Script","Brush Script MT",cursive;font-size:1rem;line-height:1.3;color:var(--p);animation:fl 5s ease-in-out infinite alternate}
+.s1{top:16px;left:22px;transform:rotate(-7deg);text-align:left}.s2{top:16px;right:22px;transform:rotate(6deg);color:var(--b);animation-delay:-2s;text-align:right}
+.bt{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:26px}.bl{font-size:clamp(2.4rem,7vw,4.4rem);animation:fl 2.5s ease-in-out infinite alternate}
+.bw{font-size:clamp(2.6rem,10vw,6rem);font-weight:900;line-height:1;letter-spacing:1px}
+.tg2{font-style:italic;color:var(--mu);margin:14px auto 24px}.tg2 b{color:var(--p);margin:0 8px}
+.ib{display:flex;flex-wrap:wrap;justify-content:center;margin-bottom:26px}
+.it{padding:6px 22px;font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border-left:1px solid var(--bd);transition:transform .25s,color .25s}
+.it:first-child{border-left:0}.it span{display:block;font-size:1.7rem;animation:fl 3s ease-in-out infinite alternate}.it:hover{transform:translateY(-5px);color:var(--b)}
+@keyframes fl{to{translate:0 -8px}}
+@media(max-width:600px){.sl{display:none}.it{padding:6px 12px}}
+.bx p{margin-bottom:12px}#pm{background:var(--bg);border:1px solid var(--a);border-radius:14px;padding:16px;margin-top:14px}#pm li{margin:6px 0 0 18px;color:var(--mu)}
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+body::before,body::after{content:"";position:fixed;width:60vw;height:60vw;border-radius:50%;filter:blur(40px);z-index:-1;pointer-events:none;animation:nb 26s ease-in-out infinite alternate}
+body::before{left:-18vw;top:8vh;background:radial-gradient(circle,rgba(124,92,255,.25),transparent 62%)}
+body::after{right:-20vw;bottom:-10vh;background:radial-gradient(circle,rgba(255,77,157,.18),transparent 62%);animation-delay:-12s}
+@keyframes nb{to{transform:translate(6vw,-5vh) scale(1.15)}}
+.card,.tc,.st,.chat,.tick,.ex{backdrop-filter:blur(10px)}
+nav{background:rgba(3,5,22,.7)!important}
+.md{background:rgba(2,3,15,.78)}
+.bx{background:linear-gradient(160deg,rgba(26,20,76,.97),rgba(7,9,32,.97));border:1px solid rgba(124,92,255,.5);box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(124,92,255,.22)}
+.bdg{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:99px;background:rgba(255,77,157,.16);color:var(--p);margin-left:10px;vertical-align:middle}
+.bdg.u{background:rgba(46,204,143,.16);color:#2ecc8f}
+#lk{position:relative;margin:16px 0;padding:6px 0}.lkt i{display:block;height:11px;border-radius:6px;background:var(--bd);margin-bottom:11px;filter:blur(3px)}.lkt i:nth-child(2){width:92%}.lkt i:nth-child(3){width:78%}.lkt i:nth-child(4){width:58%}
+.lkm{position:absolute;inset:0;display:grid;place-items:center;font-weight:700;font-size:.92rem;text-align:center;padding:0 10px}
+.bx p{line-height:1.75}.bx ul{margin:6px 0 16px 20px}
+.in{font-family:inherit}textarea.in{resize:vertical;min-height:84px}#hc{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82rem}
+.r2{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}.r2 .btn{padding:11px 22px}
+#hf{display:none;width:100%;height:340px;border:1px solid var(--bd);border-radius:12px;background:#fff;margin:6px 0 12px}
+#jm h4{margin:20px 0 6px;color:var(--b)}#jm ol{margin:8px 0 16px 20px;color:var(--mu)}
+</style>
+</head>
+<body>
+<nav><div class="logo"><span class="dot"></span>Pulse<span class="g">AI</span></div>
+<div><a href="#explained">Trending</a><a href="#trending">Top Sites</a><a href="#features">Features</a><a href="#stats">Stats</a><a href="#join">Join</a></div></nav>
+
+<header class="hero">
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+<div class="bn"><div class="sl s1">Trending Now,<br>Explained Simply</div><div class="sl s2">Stay Ahead,<br>Always Live</div>
+<div class="bt"><span class="bl">⚡</span><div class="bw">PULSE <span class="g">AI</span></div></div>
+<p class="tg2">Everything Trending <b>|</b> Explained by AI <b>|</b> Always Live</p>
+<div class="ib"><div class="it"><span>🔥</span>Trending</div><div class="it"><span>🤖</span>AI Answers</div><div class="it"><span>🏆</span>Top Sites</div><div class="it"><span>📡</span>Live Radar</div><div class="it"><span>🎓</span>Learn</div></div><button class="btn" id="jn1">Join for $5</button></div>
+<h1>Everything trending online, <span class="g">explained by AI</span></h1>
+<p>Pulse AI tracks the world's top websites and trends, then answers anything in plain language.</p>
+<a class="btn" href="#join">Get Early Access</a>
+<div class="chat" aria-label="Demo conversation">
+<div class="m u">What's the most visited website right now?</div>
+<div class="m ai" id="ans"></div>
+</div>
+</header>
+
+<div class="tick"><div class="tr" id="tr"></div></div>
+
+<section id="explained"><h2 class="rv">Everything trending, <span class="g">explained by AI</span></h2><p class="sub rv">Scroll down and watch Pulse AI explain each trend live</p><div class="tgrid"><div class="tc rv"><div class="th"><span class="ic">🤖</span><b>AI chatbots go mainstream</b><span class="hot">🔥 Hot</span></div><div class="bar"><i data-w="95"></i></div><div class="ex"><span class="bot">✨ Pulse AI explains</span><p data-t="ChatGPT is now in the global top five most visited sites, with over 5 billion visits a month. People use it like a search engine, a tutor and a writing partner."></p></div></div><div class="tc rv"><div class="th"><span class="ic">🔎</span><b>AI answers inside search</b><span class="hot">🔥 Hot</span></div><div class="bar"><i data-w="85"></i></div><div class="ex"><span class="bot">✨ Pulse AI explains</span><p data-t="Google's AI Overviews answer many questions right on the results page. That means fewer clicks to outside sites, especially news publishers."></p></div></div><div class="tc rv"><div class="th"><span class="ic">💬</span><b>Reddit as the answer hub</b><span class="hot">🔥 Rising</span></div><div class="bar"><i data-w="70"></i></div><div class="ex"><span class="bot">✨ Pulse AI explains</span><p data-t="Reddit gets over 5 billion monthly visits and is one of the most cited sites in ChatGPT answers. People want real opinions from real people."></p></div></div><div class="tc rv"><div class="th"><span class="ic">📱</span><b>The mobile-first web</b><span class="hot">🔥 Steady</span></div><div class="bar"><i data-w="80"></i></div><div class="ex"><span class="bot">✨ Pulse AI explains</span><p data-t="Most big sites are used on phones. About 65% of YouTube's 54.9 billion monthly visits come from mobile devices."></p></div></div></div></section><section id="trending"><h2 class="rv">Most visited websites <span class="g">right now</span></h2><p class="sub rv">Monthly visits · Semrush Aug 2026 and public traffic reports</p><div class="rank rv"><div class="rw" style="transition-delay:0.00s"><span class="rk">1</span><span class="nm">Google<small>Search</small></span><div class="bar"><i data-w="100" style="transition-delay:0.30s"></i></div><span class="vl"><span data-v="105.7">0</span>B</span></div><div class="rw" style="transition-delay:0.15s"><span class="rk">2</span><span class="nm">YouTube<small>Video</small></span><div class="bar"><i data-w="52" style="transition-delay:0.45s"></i></div><span class="vl"><span data-v="54.9">0</span>B</span></div><div class="rw" style="transition-delay:0.30s"><span class="rk">3</span><span class="nm">Facebook<small>Social</small></span><div class="bar"><i data-w="10" style="transition-delay:0.60s"></i></div><span class="vl"><span data-v="10.7">0</span>B</span></div><div class="rw" style="transition-delay:0.45s"><span class="rk">4</span><span class="nm">ChatGPT<small>AI ↑</small></span><div class="bar"><i data-w="5" style="transition-delay:0.75s"></i></div><span class="vl"><span data-v="5.2">0</span>B</span></div><div class="rw" style="transition-delay:0.60s"><span class="rk">5</span><span class="nm">Wikipedia<small>Knowledge</small></span><div class="bar"><i data-w="5" style="transition-delay:0.90s"></i></div><span class="vl"><span data-v="5.1">0</span>B</span></div><div class="rw" style="transition-delay:0.75s"><span class="rk">6</span><span class="nm">Reddit<small>Community ↑</small></span><div class="bar"><i data-w="5" style="transition-delay:1.05s"></i></div><span class="vl"><span data-v="5.0">0</span>B</span></div></div></section>
+
+<section id="features">
+<h2 class="rv">Built for <span class="g">what's next</span></h2>
+<p class="sub rv">Fast, clear and always up to date</p>
+<div class="grid"><div class="card rv" tabindex="0" role="button" data-k="ia"><div class="ic">⚡</div><h3>Instant answers</h3><p>Ask in plain words and get a clear answer in seconds.</p><small class="more">Tap to open →</small></div><div class="card rv" tabindex="0" role="button" data-k="tr"><div class="ic">📈</div><h3>Live trend radar</h3><p>See which sites and topics are rising before everyone else.</p><small class="more">Tap to open →</small></div><div class="card rv" tabindex="0" role="button" data-k="mf"><div class="ic">🎯</div><h3>Made for you</h3><p>Follow the topics you care about and skip the noise.</p><small class="more">Tap to open →</small></div><div class="card rv" tabindex="0" role="button" data-k="pv"><div class="ic">🔒</div><h3>Private by design</h3><p>Your questions stay yours. No creepy tracking.</p><small class="more">Tap to open →</small></div></div></section>
+
+<section id="stats"><div class="stats rv">
+<div><b class="g" data-n="105">0</b><span>Billion monthly Google visits</span></div>
+<div><b class="g" data-n="5">0</b><span>Billion+ ChatGPT monthly visits</span></div>
+<div><b class="g" data-n="1100">0</b><span>Million live websites</span></div>
+</div></section>
+
+<div class="cta rv" id="join"><h2>Ride the <span class="g">next wave</span></h2>
+<p>Join Pulse AI for $5. Members can ask for anything they want and can put their own website on it.</p>
+<button class="btn" id="jb">Join for $5</button></div>
+
+<footer>© 2026 Pulse AI · Traffic figures from public Semrush and Similarweb reports</footer>
+
+<div class="md" id="jm"><div class="bx"><button class="x" id="jx" aria-label="Close">×</button>
+<div class="ic">🚀</div><h3><span>Join Pulse AI</span><span class="bdg" id="jbg">$5</span></h3>
+<div id="jpre"><p>Join Pulse AI with a one-time payment of <b>$5</b>. Once you are a member you can ask Pulse AI to make or add anything you want, and you can put your own website HTML code on it.</p>
+<ol><li>Tap the green button and pay $5 on WhatsApp.</li><li>You receive your personal code in the chat.</li><li>Enter the code below to join.</li></ol>
+<a class="btn w" id="jwa" target="_blank" rel="noopener">Pay $5 on WhatsApp to Join</a>
+<div class="sec"><p>Got your code? Enter it to join.</p><input class="in" id="jc" placeholder="Enter your code" inputmode="numeric"><button class="btn" id="jub">Join Now</button><p id="jmsg"></p></div></div>
+<div id="jpost" style="display:none"><p class="ok">✓ Welcome! You are now a Pulse AI member.</p>
+<h4>1. Ask for anything</h4><p>Tell Pulse AI what you want it to add or make for you.</p>
+<textarea class="in" id="rq" rows="3" placeholder="Example: make me a website for my shop with a buy button"></textarea><button class="btn" id="rqs">Send request on WhatsApp</button>
+<h4>2. Put your own website</h4><p>Paste your HTML code, preview it, then send it to me on WhatsApp to put it live.</p>
+<textarea class="in" id="hc" rows="8" spellcheck="false" placeholder="<!DOCTYPE html>&#10;<html>...</html>"></textarea>
+<div class="r2"><button class="btn" id="hp">Preview</button><button class="btn" id="hcp">Copy code</button></div>
+<iframe id="hf" title="Website preview" sandbox="allow-scripts allow-forms allow-popups"></iframe>
+<button class="btn w" id="hw">Send my website on WhatsApp</button><p id="hm" class="ok"></p></div></div></div>
+<div class="md" id="md"><div class="bx"><button class="x" id="cx" aria-label="Close">×</button>
+<div class="ic" id="mi"></div><h3><span id="mt"></span><span class="bdg" id="bg">🔒 Locked</span></h3><div id="mp"></div><div id="lk"><div class="lkt"><i></i><i></i><i></i><i></i></div><div class="lkm">🔒 The full description unlocks after you buy</div></div><ul id="ml"></ul>
+<div class="pl"><div><span>Basic</span><b class="g">$2</b></div><div><span>Pro</span><b class="g">$5</b></div></div>
+<a class="btn w" id="wa" target="_blank" rel="noopener">Buy on WhatsApp</a>
+<div class="sec"><p>Already paid? Enter the code I sent you on WhatsApp.</p>
+<input class="in" id="cd" placeholder="Enter your code" inputmode="numeric"><button class="btn" id="ub">Unlock</button>
+<p id="msg"></p><div id="pm" style="display:none"></div></div></div></div>
+<script>
+(function(){
+var sites=[["Google","105.7B"],["YouTube","54.9B"],["Facebook","10.7B"],["Instagram","Top 4"],["ChatGPT","Top 5 ↑"],["Reddit","5B+ ↑"],["Wikipedia","5B+"]];
+var h="";for(var k=0;k<2;k++)sites.forEach(function(s){h+='<span><b>'+s[0]+'</b> <span class="up">'+s[1]+'</span></span>'});
+document.getElementById("tr").innerHTML=h;
+var t="Google is #1 with about 105.7B visits a month, followed by YouTube and Facebook. ChatGPT is the fastest riser, now in the global top five.",i=0,el=document.getElementById("ans");
+el.className="m ai cur";
+function ty(){if(i<=t.length){el.firstChild?el.firstChild.nodeValue=t.slice(0,i):el.appendChild(document.createTextNode(t.slice(0,i)));i++;setTimeout(ty,24)}else el.classList.remove("cur")}
+setTimeout(ty,900);
+function split(el,m){var i=0;(function w(n,g){Array.from(n.childNodes).forEach(function(c){if(c.nodeType===3){var f=document.createDocumentFragment();c.nodeValue.split(/(\s+)/).forEach(function(t){if(!t)return;if(/^\s+$/.test(t)){f.appendChild(document.createTextNode(" "));return}
+if(m==="w"){var s=document.createElement("span");s.className="ch wo"+(g?" gl":"");s.style.setProperty("--i",i++);s.textContent=t;f.appendChild(s)}else{var wd=document.createElement("span");wd.className="wd";Array.from(t).forEach(function(ch){var s=document.createElement("span");s.className="ch"+(g?" gl":"");s.style.setProperty("--i",i++);s.textContent=ch;wd.appendChild(s)});f.appendChild(wd)}});n.replaceChild(f,c)}else if(c.nodeType===1){var gg=c.classList.contains("g");if(gg)c.classList.add("sg");w(c,g||gg)}})})(el,false)}
+function ty2(p){p.textContent=p.dataset.t;split(p,"w");p.classList.add("sp");requestAnimationFrame(function(){requestAnimationFrame(function(){p.classList.add("go")})})}
+var tm=[];
+function cnt(c,n,d,f){var k=c._k=(c._k||0)+1,v=0;(function r(){if(c._k!==k)return;v+=n/55;if(v>=n){c.textContent=f(n);return}c.textContent=f(v);requestAnimationFrame(r)})()}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){var t=e.target;
+if(e.isIntersecting){if(e.intersectionRatio<.2||t._on)return;t._on=1;t.classList.add("on");
+t.querySelectorAll("[data-w]").forEach(function(b){b.style.width=b.dataset.w+"%"});
+t.querySelectorAll("[data-n]").forEach(function(c){cnt(c,+c.dataset.n,0,function(x){return Math.floor(x).toLocaleString()})});
+t.querySelectorAll("[data-v]").forEach(function(c){cnt(c,+c.dataset.v,1,function(x){return x.toFixed(1)})});
+t.querySelectorAll("[data-t]").forEach(function(p){p._h=setTimeout(function(){ty2(p)},150)})}
+else{t._on=0;t.classList.remove("on");
+t.querySelectorAll("[data-w]").forEach(function(b){b.style.width="0"});
+t.querySelectorAll("[data-n],[data-v]").forEach(function(c){c._k=(c._k||0)+1;c.textContent="0"});
+t.querySelectorAll("[data-t]").forEach(function(p){clearTimeout(p._h);p.textContent="";p.classList.remove("sp","go")})}})},{threshold:[0,.2]});
+document.querySelectorAll(".rv").forEach(function(e){io.observe(e)});
+document.querySelectorAll("h1,h2,.bw").forEach(function(h){split(h,"l");h.classList.add("sp")});
+document.querySelectorAll(".sub,.hero>p").forEach(function(h){split(h,"w");h.classList.add("sp")});
+var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){if(e.intersectionRatio>=.25)e.target.classList.add("go")}else e.target.classList.remove("go")})},{threshold:[0,.25]});
+document.querySelectorAll(".sp").forEach(function(e){io2.observe(e)});
+
+setInterval(function(){var h=document.querySelector("h1.sp"),p=document.querySelector(".hero>p.sp");if(!h||scrollY>200)return;h.classList.remove("go");if(p)p.classList.remove("go");setTimeout(function(){h.classList.add("go");if(p)p.classList.add("go")},900)},9000);
+
+var NUM="175047568",HASH="4e2b04910e7b78e7e01eb5e3632a32802437ba4204ce1aa7e8b02406759ea1e9";
+var D={
+ia:["⚡","Instant answers",[
+"Instant answers is your personal question-and-answer helper. Instead of opening ten pages and reading through long articles, you type your question in plain words and get a short, clear answer in seconds. It is built for people who want the point, not the noise.",
+"You can ask about anything: why a website is trending, what a word means, how something works, how to write a polite message, or how to plan your week. Each answer is written in simple language, so even a complicated topic becomes easy to understand. If you want more detail, just ask a follow-up and it goes deeper.",
+"It is useful for students who need quick explanations, workers who want to save time, and business owners who need fast ideas. It works on your phone and your computer, any time of day, so help is always one question away.",
+"<b>What you get:</b>"],
+["Unlimited questions and clear short answers","Easy follow-up questions to go deeper","Help with writing, planning and learning","Works on phone and computer"],
+["Ask with detail: say who you are, what you want and how long the answer should be.","Use follow-ups like explain it simpler, give me an example, or make it shorter.","Ask for steps: tell me how to do this in 5 steps.","Save your best questions and reuse them every day.","Ask it to check your work: here is my text, find the mistakes."]],
+tr:["📈","Live trend radar",[
+"Live trend radar shows you what is rising on the internet right now, so you notice the next big thing before everyone else does. It tracks the most visited websites and the fastest-growing topics, and shows them as simple moving bars that anyone can read at a glance.",
+"Why does this matter? When you know what people are visiting and searching, you can make better choices. A creator can post about a topic while it is hot. A business owner can see where customers are spending their time. A student can understand how the web is changing, for example how AI tools and community sites like Reddit keep growing.",
+"Every trend comes with a short explanation from Pulse AI, so you do not only see that something is rising, you understand why. You can also compare big sites such as Google, YouTube and Facebook by monthly visits and see how the ranking moves over time.",
+"<b>What you get:</b>"],
+["Daily list of rising sites and topics","Traffic bars that are easy to read","A plain explanation of why each trend is growing","Early alerts so you can act first"],
+["Check the radar every morning for 5 minutes and write down the top 3 rising topics.","Pick one rising topic and create a post, video or product idea around it this week.","Compare two trends and ask which has more room to grow.","Ignore trends that fall for 3 days in a row and focus on the ones that keep climbing.","Review your notes every Sunday to see which of your picks were right."]],
+mf:["🎯","Made for you",[
+"Made for you is where Pulse AI works for you personally. You tell it what you want, and it creates it: your own website, a business idea, a plan, a message, a study schedule or a daily summary of the topics you care about. It is like having a helper who builds things for you on request.",
+"For example, you can ask it to create a simple website for yourself, such as a page for your small shop, your portfolio, a birthday invitation or a page that sells your own product. It writes the HTML code, you save it as a file, open it in any browser, and it works. You can ask for changes like new colors, animations or a buy button until it looks exactly how you want.",
+"Beyond websites, you can use it to write a CV, plan a side business, prepare for an exam, write social media posts, or build a weekly habit plan. You choose your interests and it keeps your feed focused on what matters to you, with no noise.",
+"<b>What you get:</b>"],
+["Your own website created from your idea, with the code","Changes any time: colors, animations, text and buttons","Plans, posts, CVs and study schedules made for you","A personal feed built around your favorite topics"],
+["Project 1: ask for a one-page website about yourself or your business, then save it as index.html.","Project 2: ask for a 7-day content plan with a post idea for each day.","Project 3: ask for a study timetable based on your exam date.","Project 4: ask for a short CV written from your skills and experience.","Project 5: ask for a side-income idea list that matches your skills, then pick one and ask for a first-week plan."]],
+pv:["🔒","Private by design",[
+"Private by design means your questions stay yours. Many websites track what you type and sell that information to advertisers. Pulse AI is built on the opposite idea: ask what you want without feeling watched.",
+"This matters because people often ask personal things, such as money worries, health questions, business ideas or private plans. You should be able to explore these without being followed around the internet by ads about them. The design keeps your activity simple, with no creepy tracking and nothing shared with advertisers.",
+"You stay in control of your own history. You decide what to keep and what to delete, so you can use the tools freely and with confidence.",
+"<b>What you get:</b>"],
+["No creepy tracking","Nothing shared with advertisers","History you can clear whenever you want","A simple privacy guide for staying safe online"],
+["Use a strong, different password for every site and a password manager.","Turn on two-step login for your email and social accounts.","Do not share ID numbers, card numbers or passwords with any AI or website.","Clear your history on shared devices.","Be careful with links in messages from people you do not know."]]};
+var SH={ia:"Type any question in plain words and get a clear, short answer in seconds, with no searching through links.",tr:"A live board showing which websites and topics are climbing fastest, so you spot the next big thing early.",mf:"Tell Pulse AI what you want and it creates it for you, from your own website to plans, posts and more.",pv:"Your questions stay private. No tracking, no selling your data."};
+var cur,md=document.getElementById("md");
+function $(i){return document.getElementById(i)}
+function open_(k){cur=k;var d=D[k];$("mi").textContent=d[0];$("mt").textContent=d[1];$("mp").innerHTML="<p>"+SH[k]+"</p>";$("ml").innerHTML="";
+$("lk").style.display="block";document.querySelector(".bx .pl").style.display="grid";$("wa").style.display="block";$("bg").className="bdg";$("bg").textContent="🔒 Locked";
+$("wa").href="https://wa.me/"+NUM+"?text="+encodeURIComponent("Hi! I want to buy "+d[1]+" ($2 Basic or $5 Pro). Please send me my code.");
+$("msg").textContent="";$("pm").style.display="none";$("cd").value="";md.classList.add("on")}
+document.querySelectorAll(".card[data-k]").forEach(function(c){c.onclick=function(){open_(c.dataset.k)};c.onkeydown=function(e){if(e.key==="Enter")open_(c.dataset.k)}});
+$("cx").onclick=function(){md.classList.remove("on")};
+md.onclick=function(e){if(e.target===md)md.classList.remove("on")};
+$("ub").onclick=function(){var v=$("cd").value.trim(),m=$("msg");
+if(!window.crypto||!crypto.subtle){m.className="er";m.textContent="Please open this page in a modern browser.";return}
+crypto.subtle.digest("SHA-256",new TextEncoder().encode(v)).then(function(b){var h=Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,"0")}).join("");
+if(h===HASH){var d=D[cur];m.className="ok";m.textContent="✓ Unlocked! Thank you for your support.";
+$("mp").innerHTML=d[2].map(function(x){return"<p>"+x+"</p>"}).join("");$("ml").innerHTML=d[3].map(function(x){return"<li>"+x+"</li>"}).join("");
+$("lk").style.display="none";document.querySelector(".bx .pl").style.display="none";$("wa").style.display="none";$("bg").className="bdg u";$("bg").textContent="✓ Unlocked";
+$("pm").innerHTML="<b>Bonus guide: "+d[1]+"</b><ul>"+d[4].map(function(x){return"<li>"+x+"</li>"}).join("")+"</ul>";$("pm").style.display="block";$("pm").scrollIntoView({behavior:"smooth",block:"nearest"})}else{m.className="er";m.textContent="Wrong code. Text me on WhatsApp to get yours."}})};
+
+var jm=$("jm");
+function jOpen(){$("jwa").href="https://wa.me/"+NUM+"?text="+encodeURIComponent("Hi! I want to join Pulse AI ($5). Please send me my code.");jm.classList.add("on")}
+["jn1","jb"].forEach(function(i){var e=$(i);if(e)e.onclick=jOpen});
+$("jx").onclick=function(){jm.classList.remove("on")};
+jm.onclick=function(e){if(e.target===jm)jm.classList.remove("on")};
+$("jub").onclick=function(){var v=$("jc").value.trim(),m=$("jmsg");
+if(!window.crypto||!crypto.subtle){m.className="er";m.textContent="Please open this page in a modern browser.";return}
+crypto.subtle.digest("SHA-256",new TextEncoder().encode(v)).then(function(b){var h=Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,"0")}).join("");
+if(h===HASH){$("jpre").style.display="none";$("jpost").style.display="block";$("jbg").className="bdg u";$("jbg").textContent="✓ Member"}else{m.className="er";m.textContent="Wrong code. Pay on WhatsApp to get yours."}})};
+function wa(t){window.open("https://wa.me/"+NUM+"?text="+encodeURIComponent(t),"_blank")}
+$("rqs").onclick=function(){var t=$("rq").value.trim();if(!t){$("rq").focus();return}wa("Hi! I am a Pulse AI member. I want you to add/make this for me:\n\n"+t.slice(0,1500))};
+$("hp").onclick=function(){var f=$("hf");f.style.display="block";f.srcdoc=$("hc").value||"<p style='font-family:sans-serif;padding:20px'>Paste your HTML code above, then press Preview.</p>"};
+function cp(){var t=$("hc");try{navigator.clipboard.writeText(t.value);return 1}catch(e){t.select();try{return document.execCommand("copy")}catch(x){return 0}}}
+$("hcp").onclick=function(){$("hm").textContent=cp()?"✓ Code copied.":"Select the code and copy it manually."};
+$("hw").onclick=function(){if(!$("hc").value.trim()){$("hc").focus();return}cp();$("hm").textContent="✓ Code copied. Paste it in the WhatsApp chat that just opened.";wa("Hi! I am a Pulse AI member. I want to put my own website live. I will paste my HTML code in this chat now.")};
+
+var cv=document.createElement("canvas");cv.id="sky";document.body.insertBefore(cv,document.body.firstChild);
+var cx2=cv.getContext("2d"),W,H,st=[],sh=[],rm=matchMedia("(prefers-reduced-motion:reduce)").matches,CL=["255,255,255","190,210,255","255,190,230","180,240,255"];
+function rs(){var r=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*r;cv.height=H*r;cx2.setTransform(r,0,0,r,0,0);st=[];var n=Math.round(W*H/5000);for(var i=0;i<n;i++)st.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+.2,v:Math.random()*.12+.02,p:Math.random()*6.28,t:Math.random()*2+.5,c:CL[i%4]})}
+function fr(t){cx2.clearRect(0,0,W,H);st.forEach(function(q){var a=.35+.65*Math.abs(Math.sin(t/1000*q.t+q.p));cx2.fillStyle="rgba("+q.c+","+a+")";cx2.beginPath();cx2.arc(q.x,q.y,q.r,0,6.283);cx2.fill();if(!rm){q.y-=q.v;if(q.y<-2){q.y=H+2;q.x=Math.random()*W}}});
+if(!rm&&Math.random()<.004&&sh.length<2)sh.push({x:Math.random()*W*.8,y:Math.random()*H*.5,l:0});
+for(var i=sh.length-1;i>=0;i--){var m=sh[i];m.l++;var x=m.x+m.l*9,y=m.y+m.l*5,g=cx2.createLinearGradient(x,y,x-90,y-50);g.addColorStop(0,"rgba(255,255,255,.9)");g.addColorStop(1,"rgba(255,255,255,0)");cx2.strokeStyle=g;cx2.lineWidth=1.6;cx2.beginPath();cx2.moveTo(x,y);cx2.lineTo(x-90,y-50);cx2.stroke();if(m.l>70)sh.splice(i,1)}
+if(!rm)requestAnimationFrame(fr)}
+rs();addEventListener("resize",rs);requestAnimationFrame(fr);
+})();
+</script>
+</body>
+</html>
